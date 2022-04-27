@@ -53,12 +53,11 @@
         <h1 class="hero-title">Эффективные решениия <br />для вашего бизнеса</h1>
         <button class="button" type="button" data-modal-open>Заказать услугу</button>
       </div>
-      <div class="backdrop is-hidden " data-modal>
+      <div class="backdrop is-hidden" data-modal>
         <div class="modal">
           <button data-modal-close class="button-modal"></button>
-          <p></p>
         </div>
-        </div>
+      </div>
     </section>
 
     <section class="section">
@@ -117,7 +116,8 @@
         <h2 class="divide-title">Чем мы занимаемся</h2>
         <ul class="list img-section">
           <li class="what-we-do item">
-            <img src="./images/close-up-image-programer-working-his-desk-office.jpg" alt="Программист за работой" width="370" />
+            <img src="./images/close-up-image-programer-working-his-desk-office.jpg" alt="Программист за работой"
+              width="370" />
             <p class="text">Десктопные приложения</p>
           </li>
           <li class="what-we-do item">
@@ -398,6 +398,21 @@
     </div>
   </footer>
   <script src="./js/modal.js"></script>
+    <script>
+      (() => {
+        document
+          .querySelector('.js-speaker-form')
+          .addEventListener('submit', e => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`),
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
 </body>
 
 </html>
